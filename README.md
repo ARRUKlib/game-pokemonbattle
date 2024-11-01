@@ -27,14 +27,37 @@
           "pass": "รหัสผ่าน"
         }
 ```
-
-
   - Response:
       - { success: true, user_id: "ID ของผู้ใช้" } (หากล็อกอินสำเร็จ)
       - { success: false, message: "Invalid username or password" } (หากล็อกอินล้มเหลว)
-  
+  4. POST /api/register: ลงทะเบียนผู้ใช้ใหม่
+    - Body:
+```
+       {
+        "user_name": "ชื่อผู้ใช้",
+        "pass": "รหัสผ่าน"
+        }
+```
+  - Response:
+      - { success: true, message: "User registered successfully" } (หากลงทะเบียนสำเร็จ)
+      - { success: false, message: "Username already exists" } (หากชื่อผู้ใช้มีอยู่แล้ว)
 
-Response: รายชื่อโปเกมอนพร้อมรายละเอียด
+5. GET /api/user_wl: ดึงข้อมูลแพ้ชนะเสมอของผู้ใช้
+    - Query Parameters:
+        - user_id: ID ของผู้ใช้
+    - Response: ข้อมูลแพ้ชนะเสมอ
+    POST /api/save_game_result: บันทึกผลการแข่งขันและ EXP
+    - Body:
+  ```
+{
+  "user_id": "ID ของผู้ใช้",
+  "win": "จำนวนการชนะ",
+  "lose": "จำนวนการแพ้",
+  "draw": "จำนวนการเสมอ",
+  "exp": "คะแนนประสบการณ์"
+}
+
+```
 
 
 ## วิธี Deploy
