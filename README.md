@@ -28,9 +28,10 @@
         }
 ```
 
-    - Response:
-      { success: true, user_id: "ID ของผู้ใช้" } (หากล็อกอินสำเร็จ)
-      { success: false, message: "Invalid username or password" } (หากล็อกอินล้มเหลว)
+
+  - Response:
+      - { success: true, user_id: "ID ของผู้ใช้" } (หากล็อกอินสำเร็จ)
+      - { success: false, message: "Invalid username or password" } (หากล็อกอินล้มเหลว)
   
 
 Response: รายชื่อโปเกมอนพร้อมรายละเอียด
