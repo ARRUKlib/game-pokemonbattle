@@ -106,8 +106,8 @@
    ```bash
     sudo docker-compose up --build
 3. เข้าใช้งาน:
-Frontend: http://localhost:3000
-Backend: http://localhost:3001
+- Frontend: http://localhost:3000
+- Backend: http://localhost:3001
 
 # การพัฒนาเพิ่มเติม
 หากต้องการพัฒนาหรือแก้ไขโค้ด สามารถทำได้โดยแก้ไขไฟล์ในโฟลเดอร์ frontend สำหรับส่วน UI และ backend สำหรับส่วน API
