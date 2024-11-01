@@ -13,12 +13,12 @@ app.use(bodyParser.json()); // ใช้ body-parser เพื่อจัดก
 
 // เชื่อมต่อกับ PostgreSQL
 const client = new Client({
-  host: '13.228.191.168',
-  database: 'postgres',
-  user: 'postgres', // เปลี่ยนเป็นชื่อผู้ใช้ของคุณ
-  password: 'vkiydKN8825', // เปลี่ยนเป็นรหัสผ่านของคุณ
-  port: 5432, // พอร์ตของ PostgreSQL
-});
+    host: process.env.DB_HOST,
+    database: process.env.DB_NAME,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    port: process.env.DB_PORT || 5432, // พอร์ตของ PostgreSQL (ค่าเริ่มต้นคือ 5432)
+  });
 
 // เชื่อมต่อกับฐานข้อมูล
 client.connect()
@@ -258,5 +258,5 @@ app.post('/api/update_level', async (req, res) => {
 
 // เริ่มเซิร์ฟเวอร์
 app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
-});
+    console.log(`Server is running at http://localhost:${port}`);
+  });
