@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.bdf69f10.css",
+    "main.js": "/static/js/main.c2929558.js",
+    "static/js/453.1dd4e2b8.chunk.js": "/static/js/453.1dd4e2b8.chunk.js",
+    "static/media/loadingSound.mp3": "/static/media/loadingSound.417514463c219f48e0b3.mp3",
+    "static/media/P_32.jpg": "/static/media/P_32.24e160717b4a79a61782.jpg",
+    "static/media/P_13.jpg": "/static/media/P_13.4aa88c36cb7135871318.jpg",
+    "static/media/fallback-pokemon.png": "/static/media/fallback-pokemon.3f37e96d8d04d1e67452.png",
+    "static/media/P_30.jpg": "/static/media/P_30.170bd18dc305bdaa4d39.jpg",
+    "index.html": "/index.html",
+    "main.bdf69f10.css.map": "/static/css/main.bdf69f10.css.map",
+    "main.c2929558.js.map": "/static/js/main.c2929558.js.map",
+    "453.1dd4e2b8.chunk.js.map": "/static/js/453.1dd4e2b8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bdf69f10.css",
+    "static/js/main.c2929558.js"
+  ]
+}

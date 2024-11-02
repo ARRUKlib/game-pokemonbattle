@@ -1,5 +1,5 @@
 # ใช้ Node.js image ที่เป็นพื้นฐาน
-FROM node:16
+FROM node:16 AS build
 
 # ตั้งค่าโฟลเดอร์ทำงานภายใน container
 WORKDIR /usr/src/app
@@ -18,7 +18,12 @@ RUN npm run build
 
 # ใช้ Nginx เพื่อเสิร์ฟแอปพลิเคชัน React ที่ถูก build แล้ว
 FROM nginx:alpine
-COPY --from=0 /usr/src/app/build /usr/share/nginx/html
+
+# คัดลอกไฟล์ build ไปยังโฟลเดอร์ที่ใช้โดย Nginx
+COPY --from=build /usr/src/app/build /usr/share/nginx/html
+
+# คัดลอกไฟล์ nginx.conf เพื่อกำหนดค่าการทำงานของ SPA
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # เปิดพอร์ตที่ต้องการ (เช่น 80)
 EXPOSE 80
