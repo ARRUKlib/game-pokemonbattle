@@ -6,24 +6,18 @@ services:
       - "3001:3001"
     environment:
       - NODE_ENV=production
-    depends_on:
-      - db
+      - DB_HOST=13.228.191.168  # IP ของ EC2 instance ที่รัน PostgreSQL
+      - DB_PORT=5432
+      - DB_USER=postgres
+      - DB_PASSWORD=vkiydKN8825  # รหัสผ่านของ PostgreSQL ที่คุณตั้งไว้
+      - DB_NAME=postgres
 
   frontend:
     build: ./pokemon_battle_front # โฟลเดอร์ frontend
     ports:
-      - "80:80"
+      - "3000:80"
     depends_on:
       - backend
-
-  db:
-    image: postgres:13
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: vkiydKN8825 # รหัสผ่านของคุณ
-      POSTGRES_DB: postgres
-    volumes:
-      - pgdata:/var/lib/postgresql/data
 
 volumes:
   pgdata:
